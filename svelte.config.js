@@ -1,15 +1,7 @@
-import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-auto';
-import path from 'path';
+import adapter from '@sveltejs/adapter-vercel';
 
-const config = {
-  preprocess: preprocess(),
+export default {
   kit: {
     adapter: adapter(),
-    alias: {
-      $lib: path.resolve('./src'),
-    },
-  },
+  }
 };
-
-export default config;
