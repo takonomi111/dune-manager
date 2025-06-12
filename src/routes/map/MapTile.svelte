@@ -20,13 +20,9 @@
   }
 </script>
 
-<div
-  class="tile"
-  on:click={addPin}
-  on:keydown={(e) => e.key === 'Enter' && addPin(e)}
-  role="button"
-  tabindex="0"
+<div class="tile" role="button" tabindex="0" on:click={addPin}>
   <div class="tile-label">{tileId}</div>
+
   {#each pins.filter(p => p.tile_id === tileId) as pin (pin.id)}
     <div
       class="pin"
