@@ -19,12 +19,18 @@
   const color = prompt('ピンの色を選んでください:', 'deepskyblue');
 
   if (memo && color) {
-    const { data, error } = await supabase
-      .from('pins')
-      .insert([
-        { tile_id: tileId, x, y, memo, color }
-      ])
-      .select();
+   const { data, error } = await supabase
+  .from('pins')
+  .insert([
+    {
+      tile_id: tileId,
+      x: parseInt(x),
+      y: parseInt(y),
+      memo,
+      color
+    }
+  ])
+  .select();
 
     if (error) {
       console.error('Insert Error:', error);
